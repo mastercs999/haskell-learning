@@ -1,0 +1,53 @@
+Decide whether following lambda expressions are combinators (have no free variables) or not:
+    1. λx.xxx		YES
+	2. λxy.xz		NO - z is a free variable
+	3. λxyz.xy(zx)	YES
+    4. λxyz.xz(zxy)	YES
+    5. λxy.xy(zxy)	NO - z is a free variable
+	
+Decide whether following lambda expressions diverge (can't be reduced to normal form):
+    1. λx.xxx			NO - already in normal form
+	2. (λz.zz)(λy.yy)	YES - reduces to (λy.yy)(λy.yy) and continues and continues...
+	3. (λx.xxx)z		NO - ends as zzz
+	
+Reduce following lambda expressions to nromal form:
+    1. (λabc.cba)zz(λwv.w)
+	   (λbc.cbz)z(λwv.w)
+	   (λc.czz)(λwv.w)
+	   (λwv.w)zz
+	   (λv.z)z
+	   z
+	   
+	2. (λx.λy.xyy)(λa.a)b
+	   (λy.(λa.a)yy)b
+	   (λa.a)bb
+	   bb
+	   
+	3. (λy.y)(λx.xx)(λz.zq)
+	   (λx.xx)(λz.zq)
+       (λz.zq)(λz.zq)
+       (λz.zq)q
+       qq
+
+    4. (λz.z)(λz.zz)(λz.zy)
+       (λz.zz)(λz.zy)
+       (λz.zy)(λz.zy)
+       (λz.zy)y
+       yy	   
+	   
+	5. (λx.λy.xyy)(λy.y)y
+	   (λy.(λy.y)yy)y
+	   (λy.y)yy
+	   yy
+	   
+	6. (λa.aa)(λb.ba)c
+	   (λb.ba)(λb.ba)c
+	   (λb.ba)ac
+	   aac
+	   
+	7. (λxyz.xz(yz))(λx.z')(λx.a)
+	   (λyz.(λx.z')z(yz))(λx.a)
+	   λz.(λx.z')z((λx.a)z)
+	   λz.z'((λx.a)z)
+	   λz.z'a
+	   

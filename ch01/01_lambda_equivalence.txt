@@ -1,0 +1,16 @@
+Find equivalent lambda expression:
+
+1. λxy.xz
+    a) λxz.xz
+  X b) λmn.mz
+	c) λz(λx.xz)
+
+2. λxy.xxy
+    a) λmn.mnp
+	b) λx(λy.xy) 
+  X c) λa(λb.aab) 
+  
+3. λxyz.zx
+    a) λx.(λy.(λz.z))
+  X b) λtos.st
+    c) λmnp.mn
